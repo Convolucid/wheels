@@ -6,7 +6,7 @@ module.exports = {
     plugins: 
     [
         new HtmlWebpackPlugin({
-            title: 'Initialization'
+            template: 'src/index.html'
         })
     ],
     output: 
@@ -19,6 +19,11 @@ module.exports = {
     {
         rules: 
         [
+            // HTML
+            {
+                test: /\.html$/i,
+                loader: 'html-loader'
+            },
             // CSS
             {
                 test: /\.css$/i,
