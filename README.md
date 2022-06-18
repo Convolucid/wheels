@@ -34,4 +34,5 @@ Webpack dev server and building Scripts are then added to `package.json`, with a
 Babel is then added for transpiling:  `npm install @babel/core babel-loader -D`
 And is then configured for webpack by installing a preset `npm install @babel/preset-env -D` and adding Babel to the `webpack.common.js` module rules.  *Note: When React is added in the future, `@babel/preset-react` will need to be installed as well.*
 
-
+## New version creation
+Basic process involves creating a new branch, deleting all files and folders except README.md, and starting from scratch (except for `git init`).  After rebuilding the next-version branch from scratch, merge or rebase main.  Then, continue adding any version features or changes before repeating the process ad infinitum.
