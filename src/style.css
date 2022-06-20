@@ -2,12 +2,13 @@ body
 {
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     align-items:center;
 }
 
 div
 {
     padding: 15px;
-    flex-grow: 1;
+    flex: 1 1 auto;
 }
 
