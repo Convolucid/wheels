@@ -12,4 +12,4 @@ function component(content) {
 }
 
 document.body.appendChild(component(html))
-document.body.appendChild(component('Hello White Rabbit!'))
+document.body.appendChild(component('Hello Cheshire Cat!'))
