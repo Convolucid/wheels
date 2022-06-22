@@ -1,5 +1,5 @@
 import './style.css'
-import html from './aliceFragment.html'
+import html from './index.html'
 
 console.log('initialization successful');
 
