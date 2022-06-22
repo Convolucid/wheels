@@ -36,3 +36,13 @@ And is then configured for webpack by installing a preset `npm install @babel/pr
 
 ## New version creation
 Basic process involves creating a new branch, deleting all files and folders except README.md, and starting from scratch (except for `git init`).  After rebuilding the next-version branch from scratch, merge or rebase main.  Then, continue adding any version features or changes before repeating the process ad infinitum.
+
+## Upcoming features
+1. Header title and font
+2. Top nav bar with the following: 
+   - Home: basic description of the site
+   - History: summarized version history
+   - Process: this Markdown file
+3. Media queries for responsiveness (large screen limits especially)
+4. Smooth transitions and CSS effects
+5. Three.js elements

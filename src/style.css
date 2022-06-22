@@ -1,6 +1,16 @@
 body
 {
     box-sizing: border-box;
+}
+
+header
+{
+    display: flex;
+}
+
+
+main
+{
     display: flex;
     flex-wrap: wrap;
     align-items:center;
