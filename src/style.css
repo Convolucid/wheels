@@ -3,13 +3,42 @@ body
     box-sizing: border-box;
 }
 
+.container
+{
+    max-width: 1480px;
+    margin: 0 auto 0 auto;
+}
+
 header
 {
     display: flex;
+    align-items: center;
+    padding: 5px 20px;
 }
 
+nav
+{
+    display: flex;
+    margin-left: auto;
+}
+
+ul
+{
+    padding-inline-start: 0;
+}
+
+li
+{
+    display: inline-flex;
+    padding-left: 30px;
+}
 
 main
+{
+    padding: 5px 20px;
+}
+
+.iconContainer
 {
     display: flex;
     flex-wrap: wrap;
@@ -20,5 +49,28 @@ div
 {
     padding: 10px;
     flex: 1 1 auto;
+}
+
+img
+{
+    display: block;
+    margin: 0 auto;
+}
+
+#home
+{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#history
+{
+    display: none;
+}
+
+#process
+{
+    display: none;
 }
 
