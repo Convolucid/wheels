@@ -2,7 +2,7 @@ import './style.css'
 import html from './index.html'
 import homeHtml from './content/home.html'
 import historyHtml from './content/history.html'
-import processMarkdown from './content/process.md'
+import processMarkdown from '../README.md'
 
 console.log('initialization successful');
 
