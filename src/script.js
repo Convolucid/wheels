@@ -66,8 +66,6 @@ const linkArray = [
     processLink
 ]
 
-historyLink.addEventListener('click', () => displayElement(historyPage, pageArray))
-
 for(let i=0; i < linkArray.length; i++)
 {
     linkArray[i].addEventListener('click', () => displayElement(pageArray[i], pageArray))
