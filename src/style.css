@@ -31,11 +31,18 @@ li
 {
     display: inline-flex;
     padding-left: 30px;
+    cursor: pointer;
 }
 
 main
 {
     padding: 5px 20px;
+}
+
+article
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .iconContainer
@@ -56,21 +63,3 @@ img
     display: block;
     margin: 0 auto;
 }
-
-#home
-{
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#history
-{
-    display: none;
-}
-
-#process
-{
-    display: none;
-}
-
