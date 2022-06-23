@@ -35,6 +35,20 @@ module.exports = {
                 test: /\.html$/i,
                 loader: 'html-loader'
             },
+            // Markdown
+            {
+                test: /\.md$/i,
+                // exclude: './README.md',
+                use: [
+                    {loader: "html-loader"},
+                    {
+                        loader: "markdown-loader",
+                        options: {
+                            breaks: true,
+                        }
+                    }
+                ]
+            },
             // CSS
             {
                 test: /\.css$/i,
