@@ -46,3 +46,7 @@ Basic process involves creating a new branch, deleting all files and folders exc
 3. Media queries for responsiveness (large screen limits especially)
 4. Smooth transitions and CSS effects
 5. Three.js elements
+6. Accessibility (aria)
+
+### Styling principles
+Not currently working with any pre or post-processors for CSS, but for general organization I like Kevin Powell's method of Display - Positioning - Box Model - Typography - Manipulation/Effects - Miscellaneous.
