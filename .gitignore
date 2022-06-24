@@ -1,4 +1,5 @@
 dist/*
+!.gitkeep
 node_modules
 versions
 package-lock.json
