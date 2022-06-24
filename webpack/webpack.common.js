@@ -36,7 +36,7 @@ module.exports = {
             // Babel for Javascript
             {
                 test: /\.js$/i,
-                excluse: /node_modules/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {

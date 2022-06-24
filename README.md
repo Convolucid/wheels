@@ -43,18 +43,16 @@ Webpack dev server and building Scripts are then added to `package.json`, with a
 `"build": "webpack --config webpack/webpack.prod.js"`
 
 ## New version creation
-Basic process involves creating a new branch, deleting all files and folders except README.md, and starting from scratch (except for `git init`).  After rebuilding the next-version branch from scratch, merge or rebase main.  Then, continue adding any version features or changes before repeating the process ad infinitum.
+Once prepared to "rehearse" - i.e. start from scratch and iterate - the current process is to create a folder in `/versions` and clone the latest production commit into it as a backup.  Then, create a new version branch off of main, and delete everything except the directory structure, `README.md`, `.gitignore`, `.gitkeep`, `src/assets`, and `src/content`.  (For now, also delete `package.json` and the `/node_modules`).  
+
+After the files are all deleted, commit and rebuild site from scratch, including `npm install` for any packages.  The last version can be referenced as needed for Webpack configurations, etc.  After rebuilding, merge back into main, then switch back to the version branch to continue adding any features or changes before the next stopping point is reached.
 
 ## Upcoming features
 1. Header title and font
-2. Top nav bar with the following: 
-   - Home: basic description of the site
-   - History: summarized version history
-   - Process: this Markdown file
-3. Media queries for responsiveness (large screen limits especially)
-4. Smooth transitions and CSS effects
-5. Three.js elements
-6. Accessibility (aria)
+2. Media queries for responsiveness (large screen limits especially)
+3. Smooth transitions and CSS effects
+4. Three.js elements
+5. Accessibility (aria)
 
 ### Styling principles
 Not currently working with any pre or post-processors for CSS, but for general organization I like Kevin Powell's method of Display - Positioning - Box Model - Typography - Manipulation/Effects - Miscellaneous.
