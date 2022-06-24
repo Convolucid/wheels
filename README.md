@@ -14,6 +14,7 @@ This is followed by installation of core Webpack packages for bundling, loading 
 `html-loader`
 `css-loader`
 `style-loader`
+`markdown-loader`
 `webpack-dev-server`
 
 The `package.json` file is then modified to remove the `"main": "index.js"` line and add `"private": true`.
