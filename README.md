@@ -1,4 +1,4 @@
-# Training Wheels 
+# Training Wheels
 
 ## Setup
 Initial instance is for rehearsing site creation using primary tools: HTML, CSS, JS.  Ancillary tools are Webpack, Git, Vercel, and Illustrator.
@@ -48,7 +48,7 @@ Once prepared to "rehearse" - i.e. start from scratch and iterate - the current 
 After the files are all deleted, commit and rebuild site from scratch, including `npm install` for any packages.  The last version can be referenced as needed for Webpack configurations, etc.  After rebuilding, merge back into main, then switch back to the version branch to continue adding any features or changes before the next stopping point is reached.
 
 ## Upcoming features
-1. Header title and font
+1. Fonts
 2. Media queries for responsiveness (large screen limits especially)
 3. Smooth transitions and CSS effects
 4. Three.js elements
@@ -56,3 +56,7 @@ After the files are all deleted, commit and rebuild site from scratch, including
 
 ### Styling principles
 Not currently working with any pre or post-processors for CSS, but for general organization I like Kevin Powell's method of Display - Positioning - Box Model - Typography - Manipulation/Effects - Miscellaneous.
+
+I'm adapting the [Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/) by Andy Bell and some aspects of the CUBE CSS method for class conventions.  I want to avoid the class-frenzy on each HTML tag that CUBE seems to have.
+
+Avoid fixed sizes for responsiveness - instead you can use min-height and max-width.  Try to use media queries to increase complexity (this means using min-width media queries from a mobile-first perspective).  Media queries can use em and rem, and often you can get away with only one or two breakpoints.  Can use clamp() for responsiveness instead of @media.

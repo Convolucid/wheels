@@ -1,0 +1,98 @@
+/* Custom properties */
+:root
+{
+    /* Colors */
+    --primary-color: rgb(220,220,220);
+
+    /* Spacing */
+
+    /* Fonts */
+}
+
+
+/* Box-sizing on all elements and pseudo-elements */
+*, *::before, *::after 
+{
+    box-sizing: border-box;
+}
+
+/* Default margins set to 0 on elements */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd 
+{
+    margin: 0;
+}
+
+/* Smooth scrolling except when searching in-page */
+html:focus-within 
+{
+    scroll-behavior: smooth;
+}
+  
+/* This change is specifically to reset list-style on explicitly defined lists.  Removing list-style on non-explicit lists can result in accessibility issues for screen readers */
+ul[role='list'], ol[role='list'] 
+{
+    list-style: none;
+}
+  
+/* Link underlines for non-classed 'a' elements will not cross over glyph ascenders and descenders */
+a:not([class]) 
+{
+    text-decoration-skip-ink: auto;
+}
+  
+/* Block eliminates the empty space at the bottom of an image, and max-width prevents image from spilling out of bounds */
+img, picture 
+{
+    max-width: 100%;
+    display: block;
+}
+  
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select 
+{
+    font: inherit;
+}
+  
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) 
+{
+    html:focus-within 
+    {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after 
+    {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Base-level body and header styles, font and background colors, basic element styles */
+
+/* Set default body height to fill viewport, and prevent loading issues that can occur with text-rendering: optimizeLegibility.  Increased line-height helps readability. */
+body 
+{
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+
+    background-color: var(--primary-color);
+}
+
+
+
+
+/* CUBE - Composition, Utility, Block, Exception */
+/* Composition is layout like grid/flex */
+
+
+
+/* Utility classes, such as .padding-24 .padding-48 .text-dark .text-subdued .bg-neutral .text-default --- font weights, etc.  A lot of debate around using utility classes for small to medium projects.  Seems best to use custom CSS properties instead which can fill the role of Utility classes.*/
+
+
+
+/* Block */
