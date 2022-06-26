@@ -1,6 +1,4 @@
 # Setup
-Initial instance is for rehearsing site creation using primary tools: HTML, CSS, JS.  Ancillary tools are Webpack, Git, Vercel, and Illustrator.
-
 Setup process begins with `npm init -y`, then `git init`.  Three folders are added to the root directory: `src`, `dist`, and `webpack`.  `index.html`, `script.js`, and `style.css` are created in `./src`.  A `.gitignore` file is created and `package-lock.json`, `node-modules`, and the `dist` folder are added to it.  
 
 ## Webpack 
