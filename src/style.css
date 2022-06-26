@@ -2,9 +2,16 @@
 :root
 {
     /* Colors */
-    --primary-color: rgb(220,220,220);
+    --primary-color: rgb(122, 0, 146);
+    --secondary-color: rgb(255, 255, 96);
+    --neutral-color: rgb(240, 240, 240);
+
+    --type-light: rgb(253, 253, 194);
+    --type-dark: rgb(81, 42, 94);
 
     /* Spacing */
+    --padding-1: 0.5rem 2rem;
+
 
     /* Fonts */
 }
@@ -77,22 +84,106 @@ input, button, textarea, select
 body 
 {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
+
+    background-color: var(--neutral-color);
+
     line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+header
+{
+    padding: var(--padding-1);
 
     background-color: var(--primary-color);
+    color: var(--type-light);
+
+    line-height: 1.25;
 }
 
 
 
 
-/* CUBE - Composition, Utility, Block, Exception */
-/* Composition is layout like grid/flex */
+/* Navigation */
+.nav-title
+{
+    font-size: 2em;
+}
+
+.nav-list
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    padding: 0;
+
+    text-transform: uppercase;
+}
+
+.nav-list li
+{
+    flex: 0 1 auto;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+/* Main Content */
+main
+{
+    padding: var(--padding-1);
+
+    color: var(--type-dark);
+}
+
+.main-article-markdown
+{
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.main-article-markdown h1
+{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.main-article-markdown h2
+{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.main-article-markdown p
+{
+    padding-bottom: 1em;
+}
+
+.main-article-markdown ul,
+.main-article-markdown ol {
+    margin: 0;
+}
 
 
+/* Icons */
+.iconContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
 
-/* Utility classes, such as .padding-24 .padding-48 .text-dark .text-subdued .bg-neutral .text-default --- font weights, etc.  A lot of debate around using utility classes for small to medium projects.  Seems best to use custom CSS properties instead which can fill the role of Utility classes.*/
+.iconContainer div
+{
+    flex: 1 1 auto;
+}
 
+/* Utility classes */
 
-
-/* Block */
+.center-bound
+{
+    max-width: 1080px;
+    margin: 0 auto;
+}
