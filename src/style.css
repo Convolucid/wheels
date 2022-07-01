@@ -135,15 +135,29 @@ header {
 
 /* Main Content */
 main {
-    /* padding: var(--padding-1); */
-    margin-top: -1px;
+    margin-top: -5px;
 
     color: var(--type-dark);
 }
 
+.main-hero {
+    position: relative;
+}
+
+.main-hero-text {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    padding-right: 1em;
+    min-width: 65%;
+
+    text-align: right;
+    font-family: var(--serif);
+    font-size: 7vw;
+}
+
 .main-article {
-    padding-top: 1em;
-    padding-bottom: 2em;
+    padding: 1em 1em 2em 1em;
 
     color: var(--type-dark);
 }
@@ -198,6 +212,7 @@ main {
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
+    padding: 1em 1em 2em 1em;
 }
 
 .main-iconContainer div {

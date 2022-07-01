@@ -61,10 +61,18 @@ module.exports = {
                 ]
             },
 
-            // Images
+            // Images (using absence of /raw/ inline query to select for svg as URL)
             {
-                test: /\.(png|jpg|jpeg|svg|gif)$/i,
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                resourceQuery: { not: [/raw/] },
                 type: 'asset/resource'
+            },
+
+            // SVG inline using /raw/ inline query in imports
+            {
+                test: /\.svg$/i,
+                resourceQuery: /raw/,
+                type: 'asset/source'
             },
 
             // Fonts
