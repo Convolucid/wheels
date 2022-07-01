@@ -135,7 +135,8 @@ header {
 
 /* Main Content */
 main {
-    padding: var(--padding-1);
+    /* padding: var(--padding-1); */
+    margin-top: -1px;
 
     color: var(--type-dark);
 }
