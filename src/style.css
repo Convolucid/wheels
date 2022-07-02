@@ -154,7 +154,7 @@ main {
 .main-hero-text {
     position: absolute;
     right: 0;
-    top: 25%;
+    top: 15%;
     padding-right: 1em;
     min-width: 65%;
 
@@ -229,3 +229,9 @@ main {
 }
 
 
+@media (min-width: 1600px) {
+    
+    .main-hero-text {
+        font-size: 6rem;
+    }
+}
