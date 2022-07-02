@@ -35,18 +35,21 @@ function displayHomePage(){
     insertContent(mainHeroImage, practicePathHeroImage);
     mainHeroText.textContent = 'a path on which to practice';
     insertContent(mainArticle, homeContent);
+    mainArticle.style.margin = '-30vw auto 0';
 }
 
 function displayHistoryPage(){
     insertContent(mainHeroImage, '');
     insertContent(mainHeroText, '');
     insertContent(mainArticle, historyContent);
+    mainArticle.style.margin = '0 auto';
 }
 
 function displayProcessPage(){
     insertContent(mainHeroImage, '');
     insertContent(mainHeroText, '');
     insertContent(mainArticle, processContent);
+    mainArticle.style.margin = '0 auto';
 }
 
 

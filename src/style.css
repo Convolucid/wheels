@@ -69,6 +69,13 @@ input, button, textarea, select {
 }
 
 
+/* Utility classes */
+.center-bound {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
 /* Body, container, and main canvas elements.  Set default body height to fill viewport, and prevent loading issues that can occur with text-rendering: optimizeLegibility.  Increased line-height helps readability. */
 body {
     min-height: 100vh;
@@ -96,7 +103,7 @@ header {
 
 .nav-logo {
     display: inline;
-    height: 1.5rem;
+    height: 2rem;
     padding-left: 0.75rem;
 }
 
@@ -157,6 +164,7 @@ main {
 }
 
 .main-article {
+    position: relative;
     padding: 1em 1em 2em 1em;
 
     color: var(--type-dark);
@@ -208,6 +216,7 @@ main {
 
 /* Icons */
 .main-iconContainer {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -220,8 +229,3 @@ main {
 }
 
 
-/* Utility classes */
-.center-bound {
-    max-width: 1080px;
-    margin: 0 auto;
-}
