@@ -1,7 +1,15 @@
 :root {
     /* Colors */
-    --off-white: rgb(249, 246, 250);
-    --primary-color: rgb(122, 0, 146);
+    --color-neutral: rgb(249, 246, 250);
+    --color-primary: rgb(122, 0, 146);
+    --color-secondary: rgb(255, 255, 96);
+
+    --typeColor-primary: rgb(81, 42, 94);
+    --typeColor-inverse: rgb(253, 253, 194);
+
+    /* Fonts */
+    --sansSerif: Verdana, Arial, sans-serif;
+    --serif: "Georgia", Times, serif;
 }
 
 
@@ -61,7 +69,70 @@ body {
     min-height: 100vh;
 
     background-color: var(--off-white);
+    color: var(--typeColor-primary);
 
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+/* Header and navigation */
+header {
+    background-color: var(--color-primary);
+    color: var(--typeColor-inverse);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 2rem;
+}
+
+.nav-title {
+    font-family: var(--serif);
+}
+
+.nav-list {
+    display: flex;
+}
+
+/* Main content */
+.main-hero {
+    margin-top: -5px;
+}
+
+.main-hero svg {
+    position: absolute;
+}
+
+.main-hero-text {
+    position: relative;
+    padding: 5rem 2rem;
+
+    text-align: right;
+    font-family: var(--serif);
+    font-size: 7vw;
+}
+
+.main-content svg {
+    position: absolute;
+}
+
+.main-article {
+    position: relative;
+    padding-top: 100px;
+    /* background-color: var(--typeColor-inverse); */
+}
+
+/* Icon container and icons */
+.main-iconContainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-icon {
+    height: 20vw;
 }

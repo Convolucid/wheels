@@ -20,3 +20,17 @@ function component(htmlStructure)
 }
 
 document.body.appendChild( component(html) );
+
+// Get all HTML elements by id
+const mainHero = document.getElementById('main-hero')
+const mainContent = document.getElementById('main-content')
+const homeArticle = document.getElementById('home-article')
+const historyArticle = document.getElementById('history-article')
+const processArticle = document.getElementById('process-article')
+
+mainHero.insertAdjacentHTML('afterbegin', homePageHeroImage);
+mainContent.insertAdjacentHTML('afterbegin', homePageContentImage);
+homeArticle.innerHTML = homeContent;
+historyArticle.innerHTML = historyContent;
+processArticle.innerHTML = processContent;
+

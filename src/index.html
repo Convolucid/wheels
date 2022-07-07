@@ -2,9 +2,9 @@
 
 <header>
     <nav class="nav">
-        <img src="assets/svg/trainingWheels.svg" alt="Training Wheels logo" class="nav-logo">
+        <img class="nav-logo" src="assets/svg/trainingWheels.svg" alt="Training Wheels logo">
         <h1 class="nav-title">training wheels</h1>
-        <ul class="nav-list">
+        <ul class="nav-list" role="list">
             <li id="homeLink">home</li>
             <li id="historyLink">history</li>
             <li id="processLink">process</li>
@@ -13,21 +13,26 @@
 </header>
 
 <main>
-    <section class="main-hero">
-        <h1 class="main-hero-text"></h1>
+
+    <section class="main-hero" id="main-hero">
+        <h1 class="main-hero-text">a path on which to practice</h1>
     </section>
 
-    <article class="main-article"></article>
+    <section class="main-content" id="main-content">
+        <article class="main-article" id="home-article"></article>
+        <article class="main-article" id="history-article"></article>
+        <article class="main-article" id="process-article"></article>
+    </section>
 
     <section class="main-iconContainer">
-        <div id="icons-html"><img src="assets/svg/HTML.svg" alt="HTML 5 badge"></div>
-        <div id="icons-css"><img src="assets/svg/CSS.svg" alt="CSS badge"></div>
-        <div id="icons-javascript"><img src="assets/svg/Javascript.svg" alt="Javascript badge"></div>
-        <div id="icons-webpack"><img src="assets/svg/Webpack.svg" alt="Webpack icon"></div>
-        <div id="icons-git"><img src="assets/svg/Git.svg" alt="Git icon"></div>
-        <div id="icons-vscode"><img src="assets/svg/VSCode.svg" alt="VSCode icon"></div>
-        <div id="icons-threejs"><img src="assets/svg/ThreeJS.svg" alt="Three.js icon"></div>
-        <div id="icons-adobeIllustrator"><img src="assets/svg/AdobeIllustrator.svg" alt="Adobe Illustrator icon"></div>
+        <img class="main-icon" src="assets/svg/HTML.svg" alt="HTML 5 badge">
+        <img class="main-icon" src="assets/svg/CSS.svg" alt="CSS badge">
+        <img class="main-icon" src="assets/svg/Javascript.svg" alt="Javascript badge">
+        <img class="main-icon" src="assets/svg/Webpack.svg" alt="Webpack icon">
+        <img class="main-icon" src="assets/svg/Git.svg" alt="Git icon">
+        <img class="main-icon" src="assets/svg/VSCode.svg" alt="VSCode icon">
+        <img class="main-icon" src="assets/svg/ThreeJS.svg" alt="Three.js icon">
+        <img class="main-icon" src="assets/svg/AdobeIllustrator.svg" alt="Adobe Illustrator icon">
     </section>
 
 </main>
