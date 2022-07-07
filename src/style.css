@@ -3,6 +3,7 @@
     --color-neutral: rgb(249, 246, 250);
     --color-primary: rgb(122, 0, 146);
     --color-secondary: rgb(255, 255, 96);
+    --color-accent-inverse: rgb(255, 254, 230);
 
     --typeColor-primary: rgb(81, 42, 94);
     --typeColor-inverse: rgb(253, 253, 194);
@@ -68,7 +69,7 @@ input, button, textarea, select {
 body {
     min-height: 100vh;
 
-    background-color: var(--off-white);
+    background-color: var(--color-neutral);
     color: var(--typeColor-primary);
 
     line-height: 1.5;
@@ -77,6 +78,8 @@ body {
 
 /* Header and navigation */
 header {
+    padding: 10px;
+
     background-color: var(--color-primary);
     color: var(--typeColor-inverse);
 }
@@ -91,16 +94,47 @@ header {
 }
 
 .nav-title {
+    flex: 2 0 auto;
+    padding-left: 5px;
     font-family: var(--serif);
 }
 
 .nav-list {
-    display: flex;
+    display: none;
+    flex-wrap: wrap;
+    margin: 0;
 }
 
-/* Main content */
+.nav-list li {
+    padding: 0 2vw;
+}
+
+.link-menu-button {
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+
+    background-color: var(--color-primary);
+}
+
+.link-menu-stack {
+    height: 2.25rem;
+}
+
+.link-menu-wheel {
+    height: 2.25rem;
+    display: none;
+}
+
+/* Main content.  Absolute and relative sizing allows z-index like behavior, and for the inline svg to act as a background image.  Using "vw" as a sizing element creates responsiveness that matches the responsiveness of the svgs.  */
+p {
+    padding-top: 1rem;
+}
+
+
+/* Hero section */
 .main-hero {
-    margin-top: -5px;
+    margin-top: -15px;
 }
 
 .main-hero svg {
@@ -109,22 +143,37 @@ header {
 
 .main-hero-text {
     position: relative;
-    padding: 5rem 2rem;
+    padding: 15vw 5vw 5vw;
 
     text-align: right;
     font-family: var(--serif);
     font-size: 7vw;
 }
 
+/* Content section */
 .main-content svg {
     position: absolute;
 }
 
 .main-article {
     position: relative;
-    padding-top: 100px;
-    /* background-color: var(--typeColor-inverse); */
+    padding: 25vw 5vw;
+
+    font-family: var(--sansSerif);
 }
+
+#home-article {
+    display: block;
+}
+
+#history-article {
+    display: none;
+}
+
+#process-article {
+    display: none;
+}
+
 
 /* Icon container and icons */
 .main-iconContainer {
@@ -135,4 +184,15 @@ header {
 
 .main-icon {
     height: 20vw;
+}
+
+@media (min-width: 768px) {
+    
+    .link-menu-button {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+    }
 }
