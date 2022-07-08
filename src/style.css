@@ -4,6 +4,7 @@
     --color-primary: rgb(122, 0, 146);
     --color-secondary: rgb(255, 255, 96);
     --color-accent-inverse: rgb(255, 254, 230);
+    --color-overlay-alpha: rgb(81, 42, 94, 0.95);
 
     --typeColor-primary: rgb(81, 42, 94);
     --typeColor-inverse: rgb(253, 253, 194);
@@ -115,7 +116,7 @@ header {
     display: none;
 }
 
-/* Nav-list-overlap is mobile-first, where the menu expands to fill the screen */
+/* Nav-list-overlay is mobile-first, where the menu expands to fill the screen */
 .nav-list-overlay {
     position: fixed;
     display: block;
@@ -123,36 +124,55 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
+    overflow-y: hidden;
 
-    margin: 3rem 10px;
+    margin: 0;
     padding: 0;
 
-    background-color: var(--color-neutral);
-    color: var(--typeColor-primary);
+    background-color: var(--typeColor-primary);
+    background-color: var(--color-overlay-alpha);
+    color: var(--typeColor-inverse);
+
+    text-align: center;
 }
 
 /* nav-list-expand is standard top menu */
 .nav-list li { 
-    text-transform: uppercase;
-    font-family: var(--sansSerif);
-    font-size: 0.9rem;
-
     cursor: pointer;
 }
 
-.nav-list-expand li {
+.nav-list-overlay li {
     padding: 20px 0px;
-    text-align: center;
+
+    font-family: var(--serif);
+    font-size: 1.5rem;
+}
+
+.nav-list-overlay li:nth-child(1) {
+    margin-top: 20vh;
+}
+
+.nav-list-overlay li:hover, .nav-list-overlay li:focus {
+    color: var(--color-secondary);
+    
+}
+
+.nav-list-expand li {
+    padding: 0 2vw;
+
+    font-family: var(--sansSerif);
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 
-
 .nav-list-button {
-    margin-left: auto;
+    position: relative;
+    z-index: var(--z-top);
     padding: 0;
     border: 0;
-
-    background-color: var(--color-primary);
+    background: none;
 }
 
 .nav-list-button svg {
@@ -227,28 +247,5 @@ p {
     
     .nav-list-button {
         display: none;
-    }
-
-    .nav-list {
-        display: flex;
-    }
-
-    .nav-list-expand {
-        position: relative;
-        z-index: var(--z-default);
-        display: flex;
-
-        margin: 0;
-    
-        background-color: var(--color-primary);
-        color: var(--typeColor-inverse);
-    }
-
-    .nav-list li {
-        padding: 0 2vw;
-    }
-
-    .nav-list-expand li {
-        padding: 0 2vw;
     }
 }

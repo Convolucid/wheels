@@ -24,11 +24,19 @@ function component(htmlStructure)
 document.body.appendChild( component(html) );
 
 // Get HTML elements by id
+const body = document.querySelector('body');
 const mainHero = document.getElementById('main-hero')
 const mainContent = document.getElementById('main-content')
+
 const homeArticle = document.getElementById('home-article')
 const historyArticle = document.getElementById('history-article')
 const processArticle = document.getElementById('process-article')
+
+const navList = document.getElementById('nav-list')
+const homeLink = document.getElementById('link-home')
+const historyLink = document.getElementById('link-history')
+const processLink = document.getElementById('link-process')
+const navMenuButton = document.getElementById('nav-list-button')
 
 // Insert svg images and content into appropriate elements and create page array
 mainHero.insertAdjacentHTML('afterbegin', homeHeroImage);
@@ -60,18 +68,12 @@ function displayArticle(article)
 }
 
 // Get link ids in top nav and add onclicks to switch between pages
-const homeLink = document.getElementById('link-home')
-const historyLink = document.getElementById('link-history')
-const processLink = document.getElementById('link-process')
-
 homeLink.addEventListener( 'click', () => {displayArticle(homeArticle)} )
 historyLink.addEventListener( 'click', () => {displayArticle(historyArticle)} )
 processLink.addEventListener( 'click', () => {displayArticle(processArticle)} )
 
 
 // Menu button functionality
-const navList = document.getElementById('nav-list')
-const navMenuButton = document.getElementById('nav-list-button')
 navMenuButton.innerHTML = navMenuButtonStack;
 
 function expandMenu()
@@ -86,6 +88,7 @@ function collapseMenu()
     navList.removeAttribute('class')
     navList.classList.add('nav-list')
     navList.classList.add('nav-list-collapse')
+    body.style.overflow = 'auto'
     navMenuButton.innerHTML = navMenuButtonStack;
 }
 
@@ -95,13 +98,12 @@ function toggleMenuOverlay()
     {
         navList.classList.remove('nav-list-collapse')
         navList.classList.add('nav-list-overlay')
+        body.style.overflow = 'hidden'
         navMenuButton.innerHTML = navMenuButtonWheelX;
     }
     else
     {
-        navList.classList.remove('nav-list-overlay')
-        navList.classList.add('nav-list-collapse')
-        navMenuButton.innerHTML = navMenuButtonStack;
+        collapseMenu();
     }
 }
 
@@ -120,4 +122,5 @@ function resize()
     }
 }
 
+resize();
 window.addEventListener('resize', resize)
