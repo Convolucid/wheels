@@ -11,6 +11,12 @@
     /* Fonts */
     --sansSerif: Verdana, Arial, sans-serif;
     --serif: "Georgia", Times, serif;
+
+    /* Layers */
+    --z-bottom: -2;
+    --z-background: -1;
+    --z-overlay: 1;
+    --z-top: 2;
 }
 
 
@@ -100,16 +106,48 @@ header {
 }
 
 .nav-list {
-    display: none;
-    flex-wrap: wrap;
+    display: flex;
     margin: 0;
 }
 
-.nav-list li {
-    padding: 0 2vw;
+/* Nav-list-collapse is mobile-first perspective, where it's hidden. */
+.nav-list-collapse {
+    display: none;
 }
 
-.link-menu-button {
+/* Nav-list-overlap is mobile-first, where the menu expands to fill the screen */
+.nav-list-overlay {
+    position: fixed;
+    display: block;
+    z-index: var(--z-overlay);
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: 3rem 10px;
+    padding: 0;
+
+    background-color: var(--color-neutral);
+    color: var(--typeColor-primary);
+}
+
+/* nav-list-expand is standard top menu */
+.nav-list li { 
+    text-transform: uppercase;
+    font-family: var(--sansSerif);
+    font-size: 0.9rem;
+
+    cursor: pointer;
+}
+
+.nav-list-expand li {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+
+
+.nav-list-button {
     margin-left: auto;
     padding: 0;
     border: 0;
@@ -117,14 +155,10 @@ header {
     background-color: var(--color-primary);
 }
 
-.link-menu-stack {
+.nav-list-button svg {
     height: 2.25rem;
 }
 
-.link-menu-wheel {
-    height: 2.25rem;
-    display: none;
-}
 
 /* Main content.  Absolute and relative sizing allows z-index like behavior, and for the inline svg to act as a background image.  Using "vw" as a sizing element creates responsiveness that matches the responsiveness of the svgs.  */
 p {
@@ -186,13 +220,35 @@ p {
     height: 20vw;
 }
 
+
+
+
 @media (min-width: 768px) {
     
-    .link-menu-button {
+    .nav-list-button {
         display: none;
     }
 
     .nav-list {
         display: flex;
+    }
+
+    .nav-list-expand {
+        position: relative;
+        z-index: var(--z-default);
+        display: flex;
+
+        margin: 0;
+    
+        background-color: var(--color-primary);
+        color: var(--typeColor-inverse);
+    }
+
+    .nav-list li {
+        padding: 0 2vw;
+    }
+
+    .nav-list-expand li {
+        padding: 0 2vw;
     }
 }

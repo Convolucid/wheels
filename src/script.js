@@ -5,8 +5,10 @@ import homeContent from './content/home.md'
 import historyContent from './content/history.md'
 import processContent from './content/process.md'
 
-import homePageHeroImage from './assets/svg/practicePath.svg?raw'
-import homePageContentImage from './assets/svg/practicePath2.svg?raw'
+import homeHeroImage from './assets/svg/practicePath.svg?raw'
+import homeContentImage from './assets/svg/practicePath2.svg?raw'
+import navMenuButtonStack from './assets/svg/menuListStack.svg?raw'
+import navMenuButtonWheelX from './assets/svg/menuListWheelX.svg?raw'
 
 
 // Component function creates a div, adds a container class, and inserts html argument into it.  Then the div is and added to document body.  This creates the main structure of the page.
@@ -29,8 +31,8 @@ const historyArticle = document.getElementById('history-article')
 const processArticle = document.getElementById('process-article')
 
 // Insert svg images and content into appropriate elements and create page array
-mainHero.insertAdjacentHTML('afterbegin', homePageHeroImage);
-mainContent.insertAdjacentHTML('afterbegin', homePageContentImage);
+mainHero.insertAdjacentHTML('afterbegin', homeHeroImage);
+mainContent.insertAdjacentHTML('afterbegin', homeContentImage);
 homeArticle.innerHTML = homeContent;
 historyArticle.innerHTML = historyContent;
 processArticle.innerHTML = processContent;
@@ -68,19 +70,54 @@ processLink.addEventListener( 'click', () => {displayArticle(processArticle)} )
 
 
 // Menu button functionality
-const navMenuButton = document.getElementById('link-menu-button')
 const navList = document.getElementById('nav-list')
+const navMenuButton = document.getElementById('nav-list-button')
+navMenuButton.innerHTML = navMenuButtonStack;
 
-function toggleMenu()
+function expandMenu()
 {
-    if(window.getComputedStyle(navList).display == 'none')
+    navList.removeAttribute('class')
+    navList.classList.add('nav-list')
+    navList.classList.add('nav-list-expand')
+}
+
+function collapseMenu()
+{
+    navList.removeAttribute('class')
+    navList.classList.add('nav-list')
+    navList.classList.add('nav-list-collapse')
+    navMenuButton.innerHTML = navMenuButtonStack;
+}
+
+function toggleMenuOverlay()
+{
+    if(navList.classList.contains('nav-list-collapse'))
     {
-        navList.style.display = 'flex'
+        navList.classList.remove('nav-list-collapse')
+        navList.classList.add('nav-list-overlay')
+        navMenuButton.innerHTML = navMenuButtonWheelX;
     }
     else
     {
-        navList.style.display = 'none'
+        navList.classList.remove('nav-list-overlay')
+        navList.classList.add('nav-list-collapse')
+        navMenuButton.innerHTML = navMenuButtonStack;
     }
 }
 
-navMenuButton.addEventListener( 'click', ()=> { toggleMenu() } )
+navMenuButton.addEventListener( 'click', toggleMenuOverlay )
+
+// Create resize function to toggle top menu
+function resize()
+{
+    if(window.innerWidth >= 768)
+    {
+        expandMenu()
+    }
+    else
+    {
+        collapseMenu()
+    }
+}
+
+window.addEventListener('resize', resize)
