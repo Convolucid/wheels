@@ -7,6 +7,7 @@ import processContent from './content/process.md'
 
 import homeHeroImage from './assets/svg/practicePath.svg?raw'
 import homeContentImage from './assets/svg/practicePath2.svg?raw'
+import iconContainerImage from './assets/svg/practicePath3.svg?raw'
 import navMenuButtonStack from './assets/svg/menuListStack.svg?raw'
 import navMenuButtonWheelX from './assets/svg/menuListWheelX.svg?raw'
 
@@ -27,6 +28,7 @@ document.body.appendChild( component(html) );
 const body = document.querySelector('body');
 const mainHero = document.getElementById('main-hero')
 const mainContent = document.getElementById('main-content')
+const iconContainer = document.getElementById('main-iconContainer')
 
 const homeArticle = document.getElementById('home-article')
 const historyArticle = document.getElementById('history-article')
@@ -38,9 +40,13 @@ const historyLink = document.getElementById('link-history')
 const processLink = document.getElementById('link-process')
 const navMenuButton = document.getElementById('nav-list-button')
 
+
 // Insert svg images and content into appropriate elements and create page array
 mainHero.insertAdjacentHTML('afterbegin', homeHeroImage);
 mainContent.insertAdjacentHTML('afterbegin', homeContentImage);
+iconContainer.insertAdjacentHTML('afterbegin', iconContainerImage);
+navMenuButton.innerHTML = navMenuButtonStack;
+
 homeArticle.innerHTML = homeContent;
 historyArticle.innerHTML = historyContent;
 processArticle.innerHTML = processContent;
@@ -51,7 +57,7 @@ const articleArray = [
     processArticle
 ]
 
-// Page display function that displays a page of the array and hides other pages
+// Page display function that displays a page of the array and hides other pages, and menu button functionality
 function displayArticle(article) 
 {
     for(let i=0; i < articleArray.length; i++) 
@@ -66,15 +72,6 @@ function displayArticle(article)
         }
     }
 }
-
-// Get link ids in top nav and add onclicks to switch between pages
-homeLink.addEventListener( 'click', () => {displayArticle(homeArticle)} )
-historyLink.addEventListener( 'click', () => {displayArticle(historyArticle)} )
-processLink.addEventListener( 'click', () => {displayArticle(processArticle)} )
-
-
-// Menu button functionality
-navMenuButton.innerHTML = navMenuButtonStack;
 
 function expandMenu()
 {
@@ -96,8 +93,8 @@ function toggleMenuOverlay()
 {
     if(navList.classList.contains('nav-list-collapse'))
     {
-        navList.classList.remove('nav-list-collapse')
         navList.classList.add('nav-list-overlay')
+        navList.classList.remove('nav-list-collapse')
         body.style.overflow = 'hidden'
         navMenuButton.innerHTML = navMenuButtonWheelX;
     }
@@ -107,9 +104,7 @@ function toggleMenuOverlay()
     }
 }
 
-navMenuButton.addEventListener( 'click', toggleMenuOverlay )
-
-// Create resize function to toggle top menu
+// Resize function to toggle top menu
 function resize()
 {
     if(window.innerWidth >= 768)
@@ -121,6 +116,23 @@ function resize()
         collapseMenu()
     }
 }
-
 resize();
+
+// Event listeners for links and menu button functionality
 window.addEventListener('resize', resize)
+
+homeLink.addEventListener( 'click', () => {
+    displayArticle(homeArticle)
+    resize()
+})
+historyLink.addEventListener( 'click', () => {
+    displayArticle(historyArticle)
+    resize()
+})
+processLink.addEventListener( 'click', () => {
+    displayArticle(processArticle)
+    resize()
+})
+
+navMenuButton.addEventListener( 'click', toggleMenuOverlay )
+

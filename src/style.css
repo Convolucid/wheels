@@ -132,12 +132,14 @@ header {
 
     background-color: var(--typeColor-primary);
     background-color: var(--color-overlay-alpha);
+    
     color: var(--typeColor-inverse);
-
     text-align: center;
 }
 
+
 /* nav-list-expand is standard top menu */
+
 .nav-list li { 
     cursor: pointer;
 }
@@ -153,9 +155,10 @@ header {
     margin-top: 20vh;
 }
 
-.nav-list-overlay li:hover, .nav-list-overlay li:focus {
+.nav-list li:hover, .nav-list li:focus {
     color: var(--color-secondary);
-    
+    text-shadow: 0px 0px 10px var(--color-primary), 0px 0px 30px var(--color-accent-inverse);
+    transition: 1s;
 }
 
 .nav-list-expand li {
@@ -165,7 +168,6 @@ header {
     font-size: 0.9rem;
     text-transform: uppercase;
 }
-
 
 .nav-list-button {
     position: relative;
@@ -181,10 +183,6 @@ header {
 
 
 /* Main content.  Absolute and relative sizing allows z-index like behavior, and for the inline svg to act as a background image.  Using "vw" as a sizing element creates responsiveness that matches the responsiveness of the svgs.  */
-p {
-    padding-top: 1rem;
-}
-
 
 /* Hero section */
 .main-hero {
@@ -211,9 +209,48 @@ p {
 
 .main-article {
     position: relative;
-    padding: 25vw 5vw;
+    max-width: 1920px;
+    padding: 30vw 5vw;
 
     font-family: var(--sansSerif);
+}
+
+.main-article h1 {
+    padding: 0.75rem 0;
+
+    font-family: var(--serif);
+    font-size: 1.75rem;
+}
+
+.main-article h2 {
+    padding: 0.25rem 0 0.5rem;
+
+    font-family: var(--serif);
+    font-size: 1.2rem;
+}
+
+.main-article h3 {
+    padding-bottom: 0.25rem;
+
+    font-family: var(--sansSerif);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.main-article p {
+    padding-bottom: 1rem;
+}
+
+.main-article ul, main-article ol {
+    margin: 0;
+    padding-bottom: 0.25rem;
+
+    font-family: var(--sansSerif);
+}
+
+.main-article code {
+    background-color: var(--typeColor-inverse);
+    padding: 2px 4px;
 }
 
 #home-article {
@@ -232,20 +269,58 @@ p {
 /* Icon container and icons */
 .main-iconContainer {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 1.5vw;
+    grid-template-columns: repeat(5, 1fr);
+
+    padding-bottom: 5rem;
+
+    background-color: var(--typeColor-primary);
+}
+
+.main-iconContainer svg {
+    position: absolute;
+    margin-top: -30vw;
+}
+
+.main-iconContainer h1 {
+    position: relative;
+    grid-column: span 5;
+
+    padding: 2rem 0;
+
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--typeColor-inverse);
+    text-align: center;
 }
 
 .main-icon {
-    height: 20vw;
+    position: relative;
+    margin: 0 auto;
 }
 
 
-
-
+/* Media queries */
 @media (min-width: 768px) {
     
     .nav-list-button {
         display: none;
+    }
+
+    .main-icon {
+        height: 7rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .main-hero-text {
+        padding-left: 25vw;
+        font-size: 6rem;
+    }
+
+    .main-content {
+        margin-top: -15rem;
     }
 }
