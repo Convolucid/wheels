@@ -1,11 +1,11 @@
 # Rebuilding Process
-Once prepared to "rehearse" - i.e. start from scratch and iterate - the current process is to create a folder in `/versions` and clone the latest production commit into it as a backup.  Then, create a new version branch off of main, and delete everything except the directory structure, `README.md`, `.gitignore`, `.gitkeep`, `src/assets`, and `src/content`.  (For now, also delete `package.json` and the `/node_modules`).  
+Once I'm prepared to "rehearse" - i.e. start from scratch and iterate - my current process is to create a folder in `/versions` and clone the latest production commit into it as a backup.  Then I create a new version branch off of main and delete everything except the directory structure, `README.md`, `.gitignore`, `.gitkeep`, `src/assets`, and `src/content`, making sure to delete `package.json` and `/node_modules`.  
 
-After the files are all deleted, commit.  
+After the files are all deleted, I commit.  
 
 ## npm initialization and package install
-To begin rebuilding the site from scratch, run `npm init -y` and update the version number.  Install all packages as in the initial setup.
-*Note: review babel/preset-env
+To begin rebuilding the site, run `npm init -y` and update the version number.  Install all packages as in the initial setup.
+*Note: review babel/preset-env*
 
 ## Webpack configuration and package.json modification
 Recreate Webpack configuration files, using the last version as reference.  Modify `package.json` by removing the `"main": "index.js"` line and adding `"private": true`.  Webpack dev server and building Scripts are then added to `package.json`, with a reference to these configuration files: 
