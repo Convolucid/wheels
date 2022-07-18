@@ -1,19 +1,15 @@
-# Rebuilding Process
-Once I'm prepared to "rehearse" - i.e. start from scratch and iterate - my current process is to create a folder in `/versions` and clone the latest production commit into it as a backup.  Then I create a new version branch off of main and delete everything except the directory structure, `README.md`, `.gitignore`, `.gitkeep`, `src/assets`, and `src/content`, making sure to delete `package.json` and `/node_modules`.  
+# 1. Initial Setup and New Version Rebuild
 
-After the files are all deleted, I commit.  
+<section class="process-article-section" id="process-article-1"></section>
 
-## npm initialization and package install
-To begin rebuilding the site, run `npm init -y` and update the version number.  Install all packages as in the initial setup.
-*Note: review babel/preset-env*
+# 2. npm Initialization, Webpack, and Library Packages
 
-## Webpack configuration and package.json modification
-Recreate Webpack configuration files, using the last version as reference.  Modify `package.json` by removing the `"main": "index.js"` line and adding `"private": true`.  Webpack dev server and building Scripts are then added to `package.json`, with a reference to these configuration files: 
-`"dev": "webpack serve --open --config webpack/webpack.dev.js"`
-`"build": "webpack --config webpack/webpack.prod.js"`
+<section class="process-article-section" id="process-article-2"></section>
 
-## Core website HTML, CSS, and Javascript files
-Recreate script.js, index.html, and style.css, using the last version as reference.
+# 3. Core Structure and Content
 
-## Next steps
-After rebuilding, merge back into main, then switch back to the version branch to continue adding any features or changes before the next stopping point is reached.
+<section class="process-article-section" id="process-article-3"></section>
+
+# 4. Styling and Images
+
+<section class="process-article-section" id="process-article-4"></section>

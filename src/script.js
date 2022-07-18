@@ -10,6 +10,12 @@ import iconContainerImage from './assets/svg/practicePath3.svg?raw'
 import homeContent from './content/home.md'
 import historyContent from './content/history.md'
 import processContent from './content/process.md'
+import futureContent from './content/future.md'
+
+import processContent1 from './content/process/process.1-setup.md'
+import processContent2 from './content/process/process.2-packages.md'
+import processContent3 from './content/process/process.3-content.md'
+import processContent4 from './content/process/process.4-style.md'
 
 
 function component(htmlStructure)
@@ -34,11 +40,12 @@ const navMenuButton = document.getElementById('nav-list-button')
 const homeLink = document.getElementById('link-home')
 const historyLink = document.getElementById('link-history')
 const processLink = document.getElementById('link-process')
+const futureLink = document.getElementById('link-future')
 
 const homeArticle = document.getElementById('home-article')
 const historyArticle = document.getElementById('history-article')
 const processArticle = document.getElementById('process-article')
-
+const futureArticle = document.getElementById('future-article')
 
 // Insert svg images and content into appropriate elements and create page array
 navMenuButton.innerHTML = navMenuButtonStack;
@@ -49,27 +56,45 @@ iconContainer.insertAdjacentHTML('afterbegin', iconContainerImage);
 homeArticle.innerHTML = homeContent;
 historyArticle.innerHTML = historyContent;
 processArticle.innerHTML = processContent;
+futureArticle.innerHTML = futureContent;
 
 const articleArray = [
     homeArticle,
     historyArticle,
-    processArticle
+    processArticle,
+    futureArticle
+]
+
+const processArticleSection1 = document.getElementById('process-article-1')
+const processArticleSection2 = document.getElementById('process-article-2')
+const processArticleSection3 = document.getElementById('process-article-3')
+const processArticleSection4 = document.getElementById('process-article-4')
+
+processArticleSection1.innerHTML = processContent1;
+processArticleSection2.innerHTML = processContent2;
+processArticleSection3.innerHTML = processContent3;
+processArticleSection4.innerHTML = processContent4;
+
+const processArticleSectionArray = [
+    processArticleSection1,
+    processArticleSection2,
+    processArticleSection3,
+    processArticleSection4
 ]
 
 
 // Navigation functions: page display function that displays a page of the array and hides other pages, and menu button switches.  
-function displayArticle(article)
+function displayContent(content, contentArray)
 {
-    for(let i=0; i < articleArray.length; i++)
+    for(let i=0; i < contentArray.length; i++)
     {
-        if(articleArray[i] == article)
+        if(contentArray[i] == content)
         {
-            // Want to try height changing percentage instead of block and none, for transitions
-            articleArray[i].style.display = 'block';
+            contentArray[i].style.display = 'block';
         }
         else
         {
-            articleArray[i].style.display = 'none';
+            contentArray[i].style.display = 'none';
         }
     }
     resize();
@@ -124,13 +149,19 @@ resize();
 window.addEventListener('resize', resize)
 
 homeLink.addEventListener('click', ()=> {
-    displayArticle(homeArticle)
+    displayContent(homeArticle, articleArray)
 })
 historyLink.addEventListener('click', ()=> {
-    displayArticle(historyArticle)
+    displayContent(historyArticle, articleArray)
 })
 processLink.addEventListener('click', ()=> {
-    displayArticle(processArticle)
+    displayContent(processArticle, articleArray)
+})
+futureLink.addEventListener('click', ()=> {
+    displayContent(futureArticle, articleArray)
 })
 
 navMenuButton.addEventListener('click', toggleMenuOverlay)
+
+// Process page sections
+displayContent(processArticleSection1, processArticleSectionArray);
