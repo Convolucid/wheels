@@ -1,3 +1,6 @@
+# Training Wheels
+**Training Wheels** is an iterative project I built to practice front-end design.  Each version of the site is written from a clean slate: before new features are implemented, I erase the current code base and rebuild from nothing.  Developing the entire project each time has been a rewarding strategy (though tedious at times).  Drilling fundamentals is worth its weight in experience.
+
 # Setup
 Setup process begins with `npm init -y`, then `git init`.  Three folders are added to the root directory: `src`, `dist`, and `webpack`.  `index.html`, `script.js`, and `style.css` are created in `./src`.  A `.gitignore` file is created and `package-lock.json`, `node-modules`, and the `dist` folder are added to it.  
 
