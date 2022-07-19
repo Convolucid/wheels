@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 import './style.css'
 import html from './index.html'
 
@@ -16,7 +18,6 @@ import processContent1 from './content/process/process.1-setup.md'
 import processContent2 from './content/process/process.2-packages.md'
 import processContent3 from './content/process/process.3-content.md'
 import processContent4 from './content/process/process.4-style.md'
-
 
 function component(htmlStructure)
 {
@@ -65,6 +66,7 @@ const articleArray = [
     futureArticle
 ]
 
+// Have to get these elements after because they don't exist until they're inserted into processArticle
 const processArticleSection1 = document.getElementById('process-article-1')
 const processArticleSection2 = document.getElementById('process-article-2')
 const processArticleSection3 = document.getElementById('process-article-3')
@@ -75,12 +77,12 @@ processArticleSection2.innerHTML = processContent2;
 processArticleSection3.innerHTML = processContent3;
 processArticleSection4.innerHTML = processContent4;
 
-const processArticleSectionArray = [
-    processArticleSection1,
-    processArticleSection2,
-    processArticleSection3,
-    processArticleSection4
-]
+// const processArticleSectionArray = [
+//     processArticleSection1,
+//     processArticleSection2,
+//     processArticleSection3,
+//     processArticleSection4
+// ]
 
 
 // Navigation functions: page display function that displays a page of the array and hides other pages, and menu button switches.  
@@ -150,9 +152,13 @@ window.addEventListener('resize', resize)
 
 homeLink.addEventListener('click', ()=> {
     displayContent(homeArticle, articleArray)
+    // First attempts at SVG Animation using GSAP
+    moveHomeHeroImage.reverse()
 })
 historyLink.addEventListener('click', ()=> {
     displayContent(historyArticle, articleArray)
+    // SVG animation
+    moveHomeHeroImage.play()
 })
 processLink.addEventListener('click', ()=> {
     displayContent(processArticle, articleArray)
@@ -163,5 +169,24 @@ futureLink.addEventListener('click', ()=> {
 
 navMenuButton.addEventListener('click', toggleMenuOverlay)
 
-// Process page sections
-displayContent(processArticleSection1, processArticleSectionArray);
+
+
+// SVG manipulation
+const svgHomeHeroImage = document.getElementById('aPath')
+const svgHomeContentImage = document.getElementById('bPath')
+const svgIconContainerImage = document.getElementById('cPath')
+
+// Manipulating the first and third values (x and width) allows for interesting zooming and panning.  Reducing the width zooms in by that amount, and then x can be set in that range while still maintaining the svg in the entire field of view.
+svgHomeHeroImage.setAttribute('viewBox', '0 0 1200 1200')
+svgHomeContentImage.setAttribute('viewBox', '0 0 1200 1042')
+svgIconContainerImage.setAttribute('viewBox', '0 0 1200 1042')
+
+let moveHomeHeroImage = gsap.to(
+    svgHomeContentImage.viewBox.baseVal,
+    1,
+    {
+        x: 200,
+        width: 600,
+        paused: true
+    }
+)

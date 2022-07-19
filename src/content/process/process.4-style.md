@@ -11,3 +11,5 @@ Avoid fixed sizes for responsiveness - instead you can use min-height and max-wi
 
 ## Usage of SVG
 Three main methods to add .svg, which will be the bread and butter of my 2D design methods.  `<img>`, `<object>`, and inline.  They have each have their advantages and disadvantages - `<img>` tags allow caching, alt tags, and an easy workflow, but don't allow interactivity through CSS or JS.  `<object>` tags allow caching and interactivity, but load slow and don't allow alt tags.  Inline allows a great deal of interactivity and the fastest loading speed, but no alt tags and is very complicated to work with, requiring close attention to classes and ids.
+
+After importing as inline HTML, I can get the svg by its id and manipulate the `viewBox` element for panning and zooming.  Combining this with gsap will allow me really interesting flexibility in site-wide animation.

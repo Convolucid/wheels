@@ -17,7 +17,11 @@ Begin with installation of core Webpack packages for bundling, loading files, an
 `webpack-merge`
 `@babel/core`
 `babel-loader`
-`@babel/preset-env` 
+`@babel/preset-env`
+
+Packages to install as normal dependencies:
+
+`gsap`
 
 *Note: When React is added in the future, `@babel/preset-react` will need to be installed as well.  Review babel/preset-env.*
 
