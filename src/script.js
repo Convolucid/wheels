@@ -104,28 +104,31 @@ function displayContent(content, contentArray)
 
 function expandMenu()
 {
-    navList.removeAttribute('class')
-    navList.classList.add('nav-list')
     navList.classList.add('nav-list-expand');
+    navList.classList.remove('nav-list-collapse', 'nav-list-overlay')
 }
 
 function collapseMenu()
 {
-    navList.removeAttribute('class')
-    navList.classList.add('nav-list')
     navList.classList.add('nav-list-collapse')
+    navList.classList.remove('nav-list-overlay', 'nav-list-expand')
     body.style.overflow = 'auto'
     navMenuButton.innerHTML = navMenuButtonStack;
+}
+
+function overlayMenu()
+{
+    navList.classList.add('nav-list-overlay')
+    navList.classList.remove('nav-list-collapse', 'nav-list-expand')
+    body.style.overflow = 'hidden'
+    navMenuButton.innerHTML = navMenuButtonWheelX;
 }
 
 function toggleMenuOverlay()
 {
     if(navList.classList.contains('nav-list-collapse'))
     {
-        navList.classList.add('nav-list-overlay')
-        navList.classList.remove('nav-list-collapse')
-        body.style.overflow = 'hidden'
-        navMenuButton.innerHTML = navMenuButtonWheelX;
+        overlayMenu();
     }
     else
     {

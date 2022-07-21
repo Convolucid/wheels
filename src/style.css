@@ -116,18 +116,38 @@ header {
 }
 
 /* Nav-list-overlay is mobile-first, where the menu expands to fill the screen.  Overflow-y hidden prevents scrolling */
+@keyframes nav-list-flyout {
+    0% {
+        display: none;
+        width: 0%;
+    }
+    1% {
+        display: block;
+        width: 0%;
+    }
+    100% {
+        display: block;
+        width: 50%;
+    }
+}
+
 .nav-list-overlay {
     position: fixed;
     display: block;
     z-index: var(--z-overlay);
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
     overflow-y: hidden;
+    width: 50%;
+
+    animation-name: nav-list-flyout;
+    animation-duration: 0.5s;
 
     margin: 0;
     padding: 0;
+
+    border-style: none none ridge ridge;
+    border-color: var(--color-secondary);
 
     /* Two background colors provides a fallback if the alpha isn't recognized */
     background-color: var(--color-neutral-contrast);
@@ -137,21 +157,24 @@ header {
 }
 
 /* Nav-list expand is standard top menu */
+/* .nav-list-expand {
+    visibility: visible;
+} */
 
 .nav-list li {
     cursor: pointer;
 }
 
 .nav-list-overlay li {
-    padding: 20px 0px;
+    padding: 10px 0px 30px;
 
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 /* This sets the first list item lower on the screen for a mobile overlay */
 .nav-list-overlay li:nth-child(1) {
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .nav-list li:hover, .nav-list li:focus {
